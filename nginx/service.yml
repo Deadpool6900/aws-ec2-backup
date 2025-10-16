@@ -1,0 +1,15 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-service
+  namespace: webapp
+
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80 # port on which pod will run for external users
+      targetPort: 80 # port of pod
+  type: ClusterIP
