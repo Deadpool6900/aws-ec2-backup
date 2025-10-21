@@ -1,0 +1,12 @@
+
+
+kind: Pokemon
+apiVersion: mypokemons.com/v1
+metadata: 
+  name: pokemon-cr
+
+spec:
+  name: pikachu
+  pokemonType: electric
+  region : hoen
+  trainer: ash 

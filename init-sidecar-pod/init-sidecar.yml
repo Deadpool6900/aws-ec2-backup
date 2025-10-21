@@ -1,0 +1,31 @@
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: init-test
+  namespace: init-sidecar
+
+spec:
+  initContainers:
+    - name: init-c
+      image: busybox:latest
+      command:
+      - sh
+      - -c
+      - |
+        echo 'Initialization started ...'
+        sleep 5
+        echo 'Initialization completed'
+
+  containers:
+    - name: main-c
+      image: busybox:latest
+      command:
+      - sh
+      - -c
+      - |
+        echo 'Main container started'
+
+
+
